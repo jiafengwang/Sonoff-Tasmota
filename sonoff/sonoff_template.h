@@ -157,6 +157,9 @@ const char kSensorNames[] PROGMEM =
 // Supported hardware modules
 enum SupportedModules {
   SONOFF_BASIC,
+  HASSMART_1CH,
+  HASSMART_2CH,
+  HASSMART_3CH,
   SONOFF_RF,
   SONOFF_SV,
   SONOFF_TH,
@@ -220,6 +223,9 @@ typedef struct MYTMPLT {
 
 const uint8_t kNiceList[MAXMODULE] PROGMEM = {
   SONOFF_BASIC,
+  HASSMART_1CH,
+  HASSMART_2CH,
+  HASSMART_3CH,
   SONOFF_RF,
   SONOFF_TH,
   SONOFF_DUAL,
@@ -284,6 +290,66 @@ const mytmplt kModules[MAXMODULE] PROGMEM = {
      GPIO_REL1,        // GPIO12 Red Led and Relay (0 = Off, 1 = On)
      GPIO_LED1_INV,    // GPIO13 Green Led (0 = On, 1 = Off)
      GPIO_USER,        // GPIO14 Optional sensor
+     0,                // GPIO15
+     0,                // GPIO16
+     0                 // ADC0 Analog input
+  },
+{ "Hassmart 1CH",      // Hassmart 2CH (ESP8285)
+     GPIO_KEY1,        // GPIO00 Button 1
+     GPIO_USER,        // GPIO01 Serial RXD and Optional sensor
+     0,                // GPIO02
+     GPIO_USER,        // GPIO03 Serial TXD and Optional sensor
+     0,                // GPIO04 
+     0,                // GPIO05
+     0,                // GPIO06 (SD_CLK   Flash)
+     0,                // GPIO07 (SD_DATA0 Flash QIO/DIO/DOUT)
+     0,                // GPIO08 (SD_DATA1 Flash QIO/DIO/DOUT)
+     0,                // GPIO09 (SD_DATA2 Flash QIO)
+     0,                // GPIO10 (SD_DATA3 Flash QIO)
+     0,                // GPIO11 (SD_CMD   Flash)
+     GPIO_REL1,        // GPIO12 Relay 1 (0 = Off, 1 = On)
+     GPIO_LED1_INV,    // GPIO13 Blue Led (0 = On, 1 = Off)
+     0,                // GPIO14
+     0,                // GPIO15
+     0,                // GPIO16
+     0                 // ADC0 Analog input
+  },
+  { "Hassmart 2CH",    // Hassmart 2CH (ESP8285)
+     GPIO_KEY1,        // GPIO00 Button 1
+     GPIO_USER,        // GPIO01 Serial RXD and Optional sensor
+     0,                // GPIO02
+     GPIO_USER,        // GPIO03 Serial TXD and Optional sensor
+     0,                // GPIO04 
+     GPIO_REL2,        // GPIO05 Relay 2 (0 = Off, 1 = On)
+     0,                // GPIO06 (SD_CLK   Flash)
+     0,                // GPIO07 (SD_DATA0 Flash QIO/DIO/DOUT)
+     0,                // GPIO08 (SD_DATA1 Flash QIO/DIO/DOUT)
+     0,                // GPIO09 (SD_DATA2 Flash QIO)
+     0,                // GPIO10 (SD_DATA3 Flash QIO)
+     0,                // GPIO11 (SD_CMD   Flash)
+     GPIO_REL1,        // GPIO12 Relay 1 (0 = Off, 1 = On)
+     GPIO_LED1_INV,    // GPIO13 Blue Led (0 = On, 1 = Off)
+     GPIO_KEY2,        // GPIO14 Button 2
+     0,                // GPIO15
+     0,                // GPIO16
+     0                 // ADC0 Analog input
+  },
+  { "Hassmart 3CH",    // Hassmart 3CH (ESP8285)
+     GPIO_KEY1,        // GPIO00 Button 1
+     GPIO_USER,        // GPIO01 Serial RXD and Optional sensor
+     GPIO_KEY3,        // GPIO02 Button 3
+     GPIO_USER,        // GPIO03 Serial TXD and Optional sensor
+     GPIO_REL3,        // GPIO04 Relay 3 (0 = Off, 1 = On)
+     GPIO_REL2,        // GPIO05 Relay 2 (0 = Off, 1 = On)
+     0,                // GPIO06 (SD_CLK   Flash)
+     0,                // GPIO07 (SD_DATA0 Flash QIO/DIO/DOUT)
+     0,                // GPIO08 (SD_DATA1 Flash QIO/DIO/DOUT)
+     0,                // GPIO09 (SD_DATA2 Flash QIO)
+     0,                // GPIO10 (SD_DATA3 Flash QIO)
+     0,                // GPIO11 (SD_CMD   Flash)
+     GPIO_REL1,        // GPIO12 Relay 1 (0 = Off, 1 = On)
+     GPIO_LED1_INV,    // GPIO13 Blue Led (0 = On, 1 = Off)
+     GPIO_KEY2,        // GPIO14 Button 2
      0,                // GPIO15
      0,                // GPIO16
      0                 // ADC0 Analog input
